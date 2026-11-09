@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wael Lasheen | Flutter Mobile Developer</title>
-    <meta name="description" content="Wael Lasheen - Flutter Mobile Developer specializing in Clean Architecture, real-time features, and cross-platform apps">
+    <meta name="description" content="Wael Lasheen - Flutter Developer building cross-platform mobile apps with thoughtful architecture, media workflows, and real-world integrations">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -684,6 +684,108 @@
             color: var(--accent);
         }
 
+        /* Featured project */
+        .project-card-featured {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: minmax(0, 1.12fr) minmax(320px, 0.88fr);
+            background:
+                radial-gradient(circle at 92% 8%, rgba(0, 168, 232, 0.10), transparent 34%),
+                linear-gradient(135deg, rgba(0, 212, 170, 0.055), rgba(255, 255, 255, 0.018) 48%),
+                var(--bg-card);
+            border-color: rgba(0, 212, 170, 0.22);
+        }
+        .project-card-featured::before {
+            opacity: 1;
+            height: 4px;
+        }
+        .project-featured-main {
+            min-width: 0;
+            padding-bottom: 1.8rem;
+        }
+        .project-featured-main .project-header {
+            padding-top: 2rem;
+        }
+        .project-featured-intro {
+            padding: 0 1.8rem;
+            margin: 0 0 1.15rem;
+            max-width: 760px;
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+        .project-card-featured .project-desc {
+            margin-bottom: 1.25rem;
+        }
+        .project-card-featured .project-desc li {
+            margin-bottom: 0.65rem;
+        }
+        .project-card-featured .project-tech {
+            padding-bottom: 1.4rem;
+        }
+        .project-featured-side {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            align-content: center;
+            gap: 0.85rem;
+            padding: 1.8rem;
+            border-left: 1px solid var(--border);
+            background: rgba(0, 0, 0, 0.12);
+        }
+        .engineering-highlight {
+            min-height: 142px;
+            padding: 1rem;
+            border: 1px solid var(--border);
+            border-radius: 13px;
+            background: rgba(255, 255, 255, 0.025);
+        }
+        .engineering-highlight .highlight-kicker {
+            display: block;
+            margin-bottom: 0.65rem;
+            color: var(--accent);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.68rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+        .engineering-highlight strong {
+            display: block;
+            margin-bottom: 0.4rem;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+        .engineering-highlight p {
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            line-height: 1.55;
+        }
+        .project-card-featured .project-links {
+            padding-bottom: 0;
+            flex-wrap: wrap;
+        }
+        .project-card-featured .project-links a:first-child {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        @media (max-width: 900px) {
+            .project-card-featured {
+                grid-template-columns: 1fr;
+            }
+            .project-featured-side {
+                border-left: 0;
+                border-top: 1px solid var(--border);
+            }
+        }
+        @media (max-width: 600px) {
+            .project-featured-side {
+                grid-template-columns: 1fr;
+                padding: 1.2rem;
+            }
+            .engineering-highlight {
+                min-height: auto;
+            }
+        }
+
         /* Education */
         .edu-card {
             background: var(--bg-card);
@@ -860,8 +962,7 @@
                     <span class="gradient-text">Flutter Developer</span>
                 </h1>
                 <p class="hero-subtitle">
-                    Building production-ready cross-platform apps with Clean Architecture, 
-                    real-time features, and pixel-perfect UI. Passionate about scalable mobile solutions.
+                    Building reliable Flutter apps with thoughtful architecture, real-world integrations, and polished user experiences.
                 </p>
                 <div class="hero-cta-group">
                     <a href="#projects" class="btn-primary">
@@ -874,15 +975,15 @@
                 <div class="hero-stats">
                     <div class="stat-item">
                         <h3>2+</h3>
-                        <p>Years Experience</p>
+                        <p>Years Hands-on</p>
                     </div>
                     <div class="stat-item">
-                        <h3>3+</h3>
-                        <p>Production Projects</p>
+                        <h3>4</h3>
+                        <p>Projects Built</p>
                     </div>
                     <div class="stat-item">
-                        <h3>10+</h3>
-                        <p>Technologies</p>
+                        <h3>5+</h3>
+                        <p>Key Integrations</p>
                     </div>
                 </div>
             </div>
@@ -897,14 +998,15 @@
 <span class="keyword">class</span> <span class="class">FlutterDeveloper</span> <span class="keyword">extends</span> <span class="class">Developer</span> {<br>
 &nbsp;&nbsp;<span class="keyword">final</span> <span class="variable">skills</span> = [<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="string">'Clean Architecture'</span>,<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">'BLoC / Riverpod'</span>,<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">'Real-time Features'</span>,<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">'Payment Integration'</span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">'BLoC / Cubit'</span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">'Cloudinary Media Uploads'</span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">'Firebase Messaging'</span>,<br>
 &nbsp;&nbsp;];<br><br>
-&nbsp;&nbsp;<span class="class">Widget</span> <span class="function">buildProductionApp</span>() {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="class">ScalableApp</span>(<br>
+&nbsp;&nbsp;<span class="class">Widget</span> <span class="function">buildMobileExperience</span>() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="class">MobileApp</span>(<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;architecture: <span class="class">CleanArchitecture</span>(),<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;testing: <span class="class">TestCoverage</span>(<span class="variable">target</span>: <span class="string">'70%+'</span>),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mediaUpload: <span class="class">SignedCloudinaryFlow</span>(),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;networking: <span class="class">SessionAwareDio</span>(),<br>
 &nbsp;&nbsp;&nbsp;&nbsp;);<br>
 &nbsp;&nbsp;}<br>
 }
@@ -934,7 +1036,7 @@
                 </div>
                 <div class="highlight-card">
                     <h4>// State Management</h4>
-                    <p>BLoC/Cubit, Provider, Riverpod — scalable state solutions</p>
+                    <p>BLoC/Cubit and Provider for feature-specific state management</p>
                 </div>
                 <div class="highlight-card">
                     <h4>// Real-World Impact</h4>
@@ -972,7 +1074,6 @@
                 <h3><span class="icon">⚡</span> State Management</h3>
                 <div class="skill-tags">
                     <span class="skill-tag highlight">BLoC / Cubit</span>
-                    <span class="skill-tag highlight">Riverpod</span>
                     <span class="skill-tag">Provider</span>
                     <span class="skill-tag">GetIt / DI</span>
                 </div>
@@ -1086,11 +1187,71 @@
         <div class="section-header animate-on-scroll">
             <div class="section-label">featured_projects</div>
             <h2 class="section-title">Featured Projects</h2>
-            <p class="section-desc">Production-grade applications built with Clean Architecture, real-time features, and enterprise-level integrations.</p>
+            <p class="section-desc">Selected mobile projects showcasing product-focused development, complex integrations, and the engineering behind reliable app experiences.</p>
         </div>
         <div class="projects-grid">
+            <!-- StreamPro: Featured Project -->
+            <div class="project-card project-card-featured animate-on-scroll delay-1">
+                <div class="project-featured-main">
+                    <div class="project-header">
+                        <span class="project-badge">Featured Project · Video Platform</span>
+                        <h3 class="project-title">StreamPro</h3>
+                        <p class="project-role">Flutter Developer · Mobile Client | Collaborative Project</p>
+                    </div>
+                    <p class="project-featured-intro">
+                        A collaborative video platform covering discovery, playback, creator publishing, playlists, and community interactions. I developed the Flutter mobile client; the web client and backend are maintained separately by a teammate.
+                    </p>
+                    <div class="project-desc">
+                        <ul>
+                            <li>Designed a <strong>backend-orchestrated, signed Cloudinary upload workflow</strong>: the backend issues upload parameters while the mobile client transfers videos and thumbnails directly through a dedicated media client.</li>
+                            <li>Built <strong>session-aware networking</strong> with persistent cookies, automatic access-token refresh and request retry, plus account-scoped cache cleanup during session changes.</li>
+                            <li>Implemented <strong>optimistic updates with rollback</strong>, retryable pagination that preserves loaded content, and context-aware in-app notification routing.</li>
+                        </ul>
+                    </div>
+                    <div class="project-tech">
+                        <span>Flutter</span>
+                        <span>Dart</span>
+                        <span>BLoC / Cubit</span>
+                        <span>Dio</span>
+                        <span>Cloudinary</span>
+                        <span>Firebase Messaging</span>
+                        <span>Crashlytics</span>
+                        <span>GetIt</span>
+                        <span>Dartz</span>
+                        <span>GitHub Actions</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/WaelLasheen/stream-pro" target="_blank" rel="noopener noreferrer">↗ View Repository</a>
+                        <a href="https://github.com/WaelLasheen/stream-pro/blob/master/README.md" target="_blank" rel="noopener noreferrer">↗ Engineering Details</a>
+                        <a href="https://github.com/WaelLasheen/stream-pro/actions/workflows/main.yml" target="_blank" rel="noopener noreferrer">↗ CI/CD Workflow</a>
+                    </div>
+                </div>
+                <div class="project-featured-side">
+                    <div class="engineering-highlight">
+                        <span class="highlight-kicker">01 / Media Pipeline</span>
+                        <strong>Signed direct-to-Cloudinary uploads</strong>
+                        <p>Backend-issued signatures with a separate Dio client for external media transfers.</p>
+                    </div>
+                    <div class="engineering-highlight">
+                        <span class="highlight-kicker">02 / Session Lifecycle</span>
+                        <strong>Refresh, retry & account isolation</strong>
+                        <p>Persistent cookies, token refresh handling, and session-aware cache cleanup.</p>
+                    </div>
+                    <div class="engineering-highlight">
+                        <span class="highlight-kicker">03 / Resilient UX</span>
+                        <strong>Optimistic updates & recovery</strong>
+                        <p>Rollback on failed mutations and pagination retry without discarding loaded items.</p>
+                    </div>
+                    <div class="engineering-highlight">
+                        <span class="highlight-kicker">04 / Delivery</span>
+                        <strong>Automated Android delivery</strong>
+                        <p>GitHub Actions runs analysis and tests, builds release APKs, and distributes builds through Firebase App Distribution.</p>
+                    </div>
+                </div>
+            </div>
+
             <!-- Rafiq -->
-            <div class="project-card animate-on-scroll delay-1">
+            <div class="project-card animate-on-scroll delay-2">
                 <div class="project-header">
                     <span class="project-badge">Graduation Project</span>
                     <h3 class="project-title">Rafiq HealthCare</h3>
@@ -1098,30 +1259,27 @@
                 </div>
                 <div class="project-desc">
                     <ul>
-                        <li>Architected the mobile platform end-to-end using <strong>Feature-Modular Clean Architecture</strong> and BLoC/Cubit for robust state management</li>
-                        <li>Integrated secure <strong>Stripe payment gateway</strong> for consultations and <strong>Agora SDK</strong> for low-latency real-time video calls</li>
-                        <li>Implemented an <strong>offline-first medication tracker</strong> using ObjectBox with background task scheduling for local notifications</li>
+                        <li>Led mobile development of a healthcare platform combining <strong>paid consultations</strong>, real-time doctor-patient video calls, and medication management.</li>
+                        <li>Integrated <strong>Stripe</strong> for consultation payments and <strong>Agora SDK</strong> for real-time 1:1 calls.</li>
+                        <li>Built an <strong>offline-first medication tracker</strong> with ObjectBox and scheduled reminders.</li>
                     </ul>
                 </div>
                 <div class="project-tech">
                     <span>Flutter</span>
-                    <span>Dart</span>
-                    <span>Clean Architecture</span>
-                    <span>BLoC</span>
+                    <span>Feature-Modular Clean Architecture</span>
+                    <span>BLoC / Cubit</span>
                     <span>Stripe</span>
                     <span>Agora</span>
                     <span>ObjectBox</span>
                     <span>GetIt</span>
                 </div>
                 <div class="project-links">
-                    <a href="https://github.com/WaelLasheen/Rafiq-Health-Care" target="_blank">
-                        🔗 View on GitHub
-                    </a>
+                    <a href="https://github.com/WaelLasheen/Rafiq-Health-Care" target="_blank" rel="noopener noreferrer">↗ View on GitHub</a>
                 </div>
             </div>
 
             <!-- Job-Link -->
-            <div class="project-card animate-on-scroll delay-2">
+            <div class="project-card animate-on-scroll delay-3">
                 <div class="project-header">
                     <span class="project-badge">Marketplace App</span>
                     <h3 class="project-title">Job-Link</h3>
@@ -1129,9 +1287,8 @@
                 </div>
                 <div class="project-desc">
                     <ul>
-                        <li>Engineered a marketplace app connecting freelancers and clients with <strong>role-based authentication</strong> and navigation flows</li>
-                        <li>Managed local data persistence and application state using <strong>BLoC and Hive</strong> for fast offline caching</li>
-                        <li>Implemented multi-role architecture (Freelancer vs Job Owner) with separate feature modules</li>
+                        <li>Built a marketplace connecting freelancers and clients with <strong>role-specific authentication</strong> and navigation flows.</li>
+                        <li>Implemented separate freelancer and job-owner experiences with local persistence and state management using <strong>BLoC and Hive</strong>.</li>
                     </ul>
                 </div>
                 <div class="project-tech">
@@ -1143,14 +1300,12 @@
                     <span>Role-Based Auth</span>
                 </div>
                 <div class="project-links">
-                    <a href="https://github.com/WaelLasheen/Job-Link" target="_blank">
-                        🔗 View on GitHub
-                    </a>
+                    <a href="https://github.com/WaelLasheen/Job-Link" target="_blank" rel="noopener noreferrer">↗ View on GitHub</a>
                 </div>
             </div>
 
             <!-- Rick & Morty -->
-            <div class="project-card animate-on-scroll delay-3">
+            <div class="project-card animate-on-scroll delay-4">
                 <div class="project-header">
                     <span class="project-badge">Open Source</span>
                     <h3 class="project-title">Rick & Morty Explorer</h3>
@@ -1158,9 +1313,8 @@
                 </div>
                 <div class="project-desc">
                     <ul>
-                        <li>Built a responsive app applying <strong>Clean Architecture</strong> with infinite scroll pagination and dynamic search</li>
-                        <li>Configured <strong>Dio Interceptors</strong> for global error handling, logging, and offline API caching resilience</li>
-                        <li>Demonstrated advanced state management patterns and API integration best practices</li>
+                        <li>Built a responsive app using <strong>Clean Architecture</strong>, infinite-scroll pagination, and dynamic search.</li>
+                        <li>Configured Dio interceptors for centralized error handling, logging, and offline API caching.</li>
                     </ul>
                 </div>
                 <div class="project-tech">
@@ -1171,9 +1325,7 @@
                     <span>Offline Caching</span>
                 </div>
                 <div class="project-links">
-                    <a href="https://github.com/WaelLasheen" target="_blank">
-                        🔗 View on GitHub
-                    </a>
+                    <a href="https://github.com/WaelLasheen" target="_blank" rel="noopener noreferrer">↗ GitHub Profile</a>
                 </div>
             </div>
         </div>
